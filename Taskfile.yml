@@ -8,15 +8,15 @@ includes:
   # https://github.com/go-task/task/discussions/3030
 
 vars:
-  DYN_LIBS_USED: "-lstandardloop-logger -lstandardloop-collections -lstandardloop-util"
+  DYN_LIBS_USED: ""
   TEST_EXECUTABLE_NAME: test
   SOURCE_FILES:
-    - todo.c
+    - dynstring.c
   TEST_SOURCE_FILES:
-    - todo.test.c
+    - dynstring.test.c
   # for releasing
-  DYLIB_NAME: libstandardloop-todo.dylib
-  DYLIB_HEADER: todo.h
+  DYLIB_NAME: libstandardloop-dynstring.dylib
+  DYLIB_HEADER: dynstring.h
 
 tasks:
   list:
@@ -27,14 +27,12 @@ tasks:
   default:
     desc: "Builds and runs the test program."
     cmds:
-      - task: test
+      - task: test:build
 
   dependencies:
     desc: "Downloads C program dependencies."
     cmds:
-      - task: c:dependencies:logger
-      - task: c:dependencies:util
-      - task: c:dependencies:collections
+      - echo "no deps"
 
   release:
     desc: "Release the dylib, used by GitHub actions."
@@ -99,13 +97,7 @@ tasks:
     deps:
       - test:build
     vars:
-      DYLIBS:
-        [
-          "libstandardloop-logger.dylib",
-          "libstandardloop-util.dylib",
-          "libstandardloop-collections.dylib",
-          "libstandardloop-testing.dylib",
-        ]
+      DYLIBS: ["libstandardloop-testing.dylib"]
     cmds:
       - |
         {{range .DYLIBS}}

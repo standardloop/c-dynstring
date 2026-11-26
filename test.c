@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./todo.h"
+#include "./dynstring.h"
 
 int main(void)
 {
     TestingInit();
-    TestTodo();
+    TestDynString();
     TestCaseVerify(true, "Test", 1);
     TestingTearDown();
     return EXIT_SUCCESS;
