@@ -1,12 +1,12 @@
-# c-template
+# c-dynstring
 
-[https://github.com/standardloop/c-template](https://github.com/standardloop/c-template)
+[https://github.com/standardloop/c-dynstring](https://github.com/standardloop/c-dynstring)
 
-[![GitHub Release](https://img.shields.io/github/v/release/standardloop/c-template?sort=semver)](https://github.com/standardloop/c-template/releases) ![C Version](https://img.shields.io/badge/C_Standard-C17-00599C?logo=c&logoColor=white)
+[![GitHub Release](https://img.shields.io/github/v/release/standardloop/c-dynstring?sort=semver)](https://github.com/standardloop/c-dynstring/releases) ![C Version](https://img.shields.io/badge/C_Standard-C17-00599C?logo=c&logoColor=white)
 
 ## About
 
-Template repo to spawn C projects from.
+A repo for a dynamic string library
 
 ## Running
 
